@@ -1,10 +1,12 @@
+import pandas as pd
+
 class Clean_Tweets:
     """
     The PEP8 Standard AMAZING!!!
     """
     def __init__(self, df:pd.DataFrame):
         self.df = df
-        print('Automation in Action...!!!')
+        print('Automation in Action..!!!')
         
     def drop_unwanted_column(self, df:pd.DataFrame)->pd.DataFrame:
         """
@@ -21,7 +23,7 @@ class Clean_Tweets:
         drop duplicate rows
         """
         
-        ---
+        self.df = df.drop_duplicates(subset='original_text')
         
         return df
     def convert_to_datetime(self, df:pd.DataFrame)->pd.DataFrame:
