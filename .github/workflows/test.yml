@@ -37,9 +37,9 @@ jobs:
 
 on:
   push:
-    branches: [main]
+    branches: [fix_bug]
   pull_request:
-    branches: [main]
+    branches: [fix_bug]
 
 permissions:
   contents: read
