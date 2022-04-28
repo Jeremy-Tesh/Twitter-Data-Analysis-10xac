@@ -31,9 +31,8 @@ jobs:
         run: |
           unzip ./data/Economic_Twitter_Data.zip
 
-     - name: Test data exctration
+      - name: Test data exctration
         run: |
           python -m unittest tests.test_extract_dataframe
-      - name : Test clean tweet   
+      - name: Test clean tweet
           python -m unittest tests.test_clean_tweets_dataframe
-          
