@@ -28,9 +28,7 @@ class TestTweetDfExtractor(unittest.TestCase):
         self.df = TweetDfExtractor(tweet_list[:5])
         # tweet_df = self.df.get_tweet_df()
 
-    def test_find_statuses_count(self):
-        """Test find status count module."""
-        self.assertEqual(self.df.find_statuses_count(), [40, 40, 40, 40, 40])
+    
 
     def test_find_full_text(self):
         """Test find full text method."""
@@ -71,7 +69,7 @@ class TestTweetDfExtractor(unittest.TestCase):
 
     def test_find_friends_count(self):
         """Test find friend count module."""
-        friends_count = [12, 12, 12, 12, 12]
+        friends_count = [3, 3, 3, 3, 3]
         self.assertEqual(self.df.find_friends_count(), friends_count)
 
     def test_find_is_sensitive(self):
