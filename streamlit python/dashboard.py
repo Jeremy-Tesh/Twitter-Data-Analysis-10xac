@@ -4,6 +4,7 @@ import streamlit as st
 import altair as alt
 from wordcloud import WordCloud
 import plotly.express as px
+from analysis import side_bar
 from db_operations import db_execute_fetch
 
 st.set_page_config(page_title="Day 5", layout="wide")
@@ -86,15 +87,27 @@ def langPie():
     with colB2:
         st.write(dfLangCount)
 
+st.sidebar.title("Tweetiter Analysis")
+select=st.sidebar.selectbox('Models',['Topic Model','Sentiment Analysis'],key=1)
 
-st.title("Data Display")
-selectHashTag()
-st.markdown("<p style='padding:10px; background-color:#000000;color:#00ECB9;font-size:16px;border-radius:10px;'>Section Break</p>", unsafe_allow_html=True)
-# selectLocAndAuth()
-st.title("Data Visualizations")
-loadData()
 
-wordCloud()
-with st.beta_expander("Show More Graphs"):
-    stBarChart()
-    langPie()
+if select == "Sentiment Analysis":
+        
+        side_bar()
+else:
+    st.title("Data Display")
+    
+    selectHashTag()
+    st.markdown("<p style='padding:10px; background-color:#000000;color:#00ECB9;font-size:16px;border-radius:10px;'>Section Break</p>", unsafe_allow_html=True)
+        # selectLocAndAuth()
+    st.title("Data Visualizations")
+    loadData()
+
+    wordCloud()
+    with st.beta_expander("Show More Graphs"):
+        stBarChart()
+        langPie()        
+
+
+
+        
